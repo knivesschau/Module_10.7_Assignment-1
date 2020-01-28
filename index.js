@@ -1,14 +1,14 @@
 'use strict';
 
-const parkSearch = `https://developer.nps.gov/api/v1/parks`;
+const parkSearch = "https://developer.nps.gov/api/v1/parks";
 const apiKey = "HDRoriqkk0gQTncHBeCliOEDhVZd2H3OJO8bUcuY";
 
 function submitState() {
     console.log("App loaded, ready for input.");
     $("#state-selector").on("submit", function(event) {
         event.preventDefault();
-        const stateInput = $("#state-entry").val();
-        const limit = $("#park-number").val();
+        const stateInput = $(this).find("#state-entry").val();
+        const limit = $(this).find("#park-number").val();
         obtainParkData(stateInput, limit);
     });
 }
@@ -18,12 +18,11 @@ function convertQuery(parameters) {
     return parkData.join("&");
 }
 
-function obtainParkData(query, limit=10) {
+function obtainParkData(query, maxResults=10) {
     const parameters = {
         api_key: apiKey,
-        q: query,
-        limit: limit,
         stateCode: query,
+        limit: maxResults,
     };
 
     const searchString = convertQuery(parameters);
@@ -47,10 +46,10 @@ function showParks(responseJson) {
     for (let i = 0; i < responseJson.data.length; i++) {
         $("#parks-list").append(`
         <li><h3>${responseJson.data[i].fullName}</h3>
-        <a href='${responseJson.data[i].url}'>${responseJson.data[i].url}</a>
-        <p><span id="park-1">Park Info:</span>${responseJson.data[i].description}</p>
-        <p><span id="park-2">Weather:</span>${responseJson.data[i].weatherInfo}</p>
-        <p><span id="park-3">Directions:</span>${responseJson.data[i].directionsInfo}</p>
+        <span id="park-1">Website:</span><a href='${responseJson.data[i].url}'>${responseJson.data[i].url}</a>
+        <p><span id="park-2">Park Info:</span>${responseJson.data[i].description}</p>
+        <p><span id="park-3">Weather:</span>${responseJson.data[i].weatherInfo}</p>
+        <p><span id="park-4">Directions:</span>${responseJson.data[i].directionsInfo}</p>
         </li>`)
     }
     $("#parks").removeClass("hidden");
