@@ -18,10 +18,9 @@ p {
 
 a {
     font-size: 20px;
-    margin-left: 10px;
 }
 
-h1, h2, span {
+h1, h2 {
     margin-left: 10px;
 }
 
@@ -48,6 +47,10 @@ span {
 #park-1, #park-2, #park-3, #park-4 {
     font-weight: bold;
     color: crimson;
+}
+
+#park-1 {
+    margin-left: 10px;
 }
 
 #parks {
