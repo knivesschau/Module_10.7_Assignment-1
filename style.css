@@ -5,3 +5,69 @@
 ul {
     list-style-type: square;
 }
+
+body {
+    border: 2px solid black;
+    margin: 20px;
+}
+
+p {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+a {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+h1, h2, span {
+    margin-left: 10px;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+.notes {
+    font-style: italic;
+    font-weight: bold;
+    color: purple;
+}
+
+span {
+    font-size: 20px;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+.descrip-2 {
+    margin-left: 20px;
+}
+
+#park-1, #park-2, #park-3 {
+    font-weight: bold;
+    color: crimson;
+}
+
+#parks {
+    padding: 20px;
+}
+
+#state-entry {
+    height: 20px;
+    width: 200px;
+    font-size: 18px;
+}
+
+#park-number {
+    text-align: center;
+    font-size: 18px;
+}
+
+#submit-button {
+    height: 80px;
+    width: 80px;
+    font-size: 20px;
+    margin-left: 15px;
+}
